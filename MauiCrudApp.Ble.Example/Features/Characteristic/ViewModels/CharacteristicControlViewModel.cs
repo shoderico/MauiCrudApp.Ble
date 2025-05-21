@@ -29,6 +29,8 @@ public partial class CharacteristicControlViewModel : ViewModelBase<Characterist
         _dialogService = dialogService;
         _bleDeviceManager = bleDeviceManager;
         _characteristicStateStore = characteristicStateStore;
+
+        characteristicStateStore.Characteristics.CollectionChanged += OnCollectionChanged;
     }
 
     [ObservableProperty]
@@ -44,5 +46,14 @@ public partial class CharacteristicControlViewModel : ViewModelBase<Characterist
         }
     }
 
+    private void OnCollectionChanged(object? sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+    {
+        var characteristics = _characteristicStateStore.Characteristics.ToList(); // copy
+        Characteristics.Clear();
+        foreach (var cvm in characteristics)
+        {
+            Characteristics.Add(cvm);
+        }
+    }
 
 }
