@@ -6,6 +6,28 @@ The accompanying **MauiCrudApp.Ble.Example** project demonstrates the library's 
 
 ---
 
+## Screenshots
+
+Below are screenshots of the `MauiCrudApp.Ble.Example` app showcasing key features:
+
+- **Device Scan Page**: Displays discovered BLE devices for selection.
+- **Device Connect Page**: Shows device connection status and available services.
+- **Characteristic Control Page**: Allows reading, writing, and toggling notifications for characteristics.
+
+### Device Scan / Connect Page
+
+| Device Scan Page | Device Connect Page |
+|------------------|---------------------|
+| ![Device Scan](screenshots/DeviceScan.jpg) | ![Device Connect](screenshots/DeviceConnect.jpg) |
+
+### Characteristic Control Page
+
+| Characteristic Control Page | Read / Write / Notify |
+|------------------|---------------------|
+| ![Device Scan](screenshots/CharacteristicControl_1.jpg) | ![Device Connect](screenshots/CharacteristicControl_2.jpg) |
+
+---
+
 ## Features
 
 - **Cross-Platform Support**: Works seamlessly on Android, iOS, Windows, and (optionally) Tizen and MacCatalyst.
