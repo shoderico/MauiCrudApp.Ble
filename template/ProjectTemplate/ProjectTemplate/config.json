@@ -1,0 +1,7 @@
+{
+  "projectPath": "..\\..\\MauiCrudApp.Ble.Example",
+  "templateName": "MauiCrudApp.Ble.ProjectTemplate",
+  "vstemplateSource": "MyTemplate.vstemplate",
+  "iconSource": "__TemplateIcon.ico",
+  "namespaceToReplace": "MauiCrudApp.Ble.Example"
+}
