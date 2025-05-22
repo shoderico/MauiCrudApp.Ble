@@ -4,6 +4,7 @@ using CommunityToolkit.Mvvm.Input;
 
 using MauiCrudApp.Common.Interfaces;
 using MauiCrudApp.Ble.Interfaces;
+using Plugin.BLE.Abstractions;
 
 namespace MauiCrudApp.Ble.Example.Features.Characteristic.ViewModels;
 
@@ -22,6 +23,9 @@ public partial class CharacteristicViewModel : ObservableObject
     [ObservableProperty]
     private ObservableCollection<BleValueChangedEventArgs> readValues;
 
+    [ObservableProperty]
+    private ObservableCollection<CharacteristicWriteType> writeTypeOptions;
+
     public CharacteristicViewModel(IBleCharacteristic characteristic, Guid serviceId, IBleDeviceManager bleDeviceManager, IDialogService dialogService)
     {
         Characteristic = characteristic;
@@ -30,6 +34,13 @@ public partial class CharacteristicViewModel : ObservableObject
         _dialogService = dialogService;
         WriteValue = string.Empty;
         ReadValues = new ObservableCollection<BleValueChangedEventArgs>();
+
+        WriteTypeOptions = new ObservableCollection<CharacteristicWriteType>
+        {
+            CharacteristicWriteType.Default,
+            CharacteristicWriteType.WithResponse,
+            CharacteristicWriteType.WithoutResponse
+        };
 
         // Subscribe to value changes
         characteristic.ValueChanged += (s, value) =>

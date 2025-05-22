@@ -33,6 +33,10 @@
                                         <Label Text="{Binding Characteristic.CanWrite}" />
                                     </StackLayout>
                                     <StackLayout Orientation="Horizontal" Spacing="3" Margin="0,0,5,0">
+                                        <Label Text="WriteType:" />
+                                        <Label Text="{Binding Characteristic.WriteType}" />
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" Spacing="3" Margin="0,0,5,0">
                                         <Label Text="CanNotify:" />
                                         <Label Text="{Binding Characteristic.CanNotify}" />
                                     </StackLayout>
@@ -40,12 +44,20 @@
                                         <Label Text="IsNotifying:" />
                                         <Label Text="{Binding Characteristic.IsNotifying}" />
                                     </StackLayout>
+                                    
                                 </FlexLayout>
 
                                 <!-- Write UI: Show if CanWrite is true -->
                                 <StackLayout IsVisible="{Binding Characteristic.CanWrite}" Orientation="Horizontal" Spacing="5">
-                                    <Entry Placeholder="Enter text to write" Text="{Binding WriteValue}" HorizontalOptions="FillAndExpand" />
-                                    <Button Text="Write" Command="{Binding WriteCommand}" CommandParameter="{Binding Characteristic}" />
+                                    <!-- WriteType Picker -->
+                                    <Picker Title="Select Write Type"
+                                            ItemsSource="{Binding WriteTypeOptions}"
+                                            SelectedItem="{Binding Characteristic.WriteType, Mode=TwoWay}"
+                                            HorizontalOptions="FillAndExpand" />
+                                    <StackLayout Orientation="Horizontal" Spacing="5">
+                                        <Entry Placeholder="Enter text to write" Text="{Binding WriteValue}" HorizontalOptions="FillAndExpand" />
+                                        <Button Text="Write" Command="{Binding WriteCommand}" CommandParameter="{Binding Characteristic}" />
+                                    </StackLayout>
                                 </StackLayout>
                                 
 
