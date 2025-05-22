@@ -3,6 +3,7 @@ using Plugin.BLE.Abstractions.Contracts;
 
 using MauiCrudApp.Ble.Interfaces;
 using Plugin.BLE.Abstractions.EventArgs;
+using Plugin.BLE.Abstractions;
 
 namespace MauiCrudApp.Ble.Models;
 
@@ -27,6 +28,9 @@ public partial class BleCharacteristic : ObservableObject, IBleCharacteristic
     [ObservableProperty]
     private bool isNotifying;
 
+    [ObservableProperty]
+    private CharacteristicWriteType writeType;
+
     public byte[] Value { get; private set; }
 
     public event EventHandler<BleValueChangedEventArgs> ValueChanged;
@@ -39,6 +43,7 @@ public partial class BleCharacteristic : ObservableObject, IBleCharacteristic
         CanRead = nativeCharacteristic.CanRead;
         CanWrite = nativeCharacteristic.CanWrite;
         CanNotify = nativeCharacteristic.CanUpdate;
+        WriteType = nativeCharacteristic.WriteType;
         Value = Array.Empty<byte>();
         IsNotifying = false;
     }
@@ -112,6 +117,19 @@ public partial class BleCharacteristic : ObservableObject, IBleCharacteristic
         catch (Exception ex)
         {
             throw new InvalidOperationException($"Write failed: {ex.Message}", ex);
+        }
+    }
+
+    partial void OnWriteTypeChanged(CharacteristicWriteType value)
+    {
+        if (NativeCharacteristic.Properties.HasFlag(value))
+        {
+            NativeCharacteristic.WriteType = value;
+        }
+        else
+        {
+            Console.WriteLine("not supported");
+            throw new NotSupportedException("The specified write type is not supported by this characteristic.");
         }
     }
 }

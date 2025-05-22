@@ -1,4 +1,5 @@
-﻿using Plugin.BLE.Abstractions.Contracts;
+﻿using Plugin.BLE.Abstractions;
+using Plugin.BLE.Abstractions.Contracts;
 
 namespace MauiCrudApp.Ble.Interfaces;
 
@@ -12,6 +13,7 @@ public interface IBleCharacteristic
     bool CanNotify { get; }
     bool IsNotifying { get; }
     byte[] Value { get; }
+    CharacteristicWriteType WriteType { get; set; }
 
     event EventHandler<BleValueChangedEventArgs> ValueChanged;
 
