@@ -122,14 +122,13 @@ public partial class BleCharacteristic : ObservableObject, IBleCharacteristic
 
     partial void OnWriteTypeChanged(CharacteristicWriteType value)
     {
-        if (NativeCharacteristic.Properties.HasFlag(value))
+        try
         {
             NativeCharacteristic.WriteType = value;
         }
-        else
+        catch (Exception ex)
         {
-            Console.WriteLine("not supported");
-            throw new NotSupportedException("The specified write type is not supported by this characteristic.");
+            throw new InvalidOperationException($"OnWriteTypeChanged failed: {ex.Message}", ex);
         }
     }
 }
