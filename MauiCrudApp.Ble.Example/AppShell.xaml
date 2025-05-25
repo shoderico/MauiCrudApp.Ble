@@ -5,8 +5,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:shell="clr-namespace:MauiCrudApp.Common.Controls;assembly=MauiCrudApp.Common"
     xmlns:local="clr-namespace:MauiCrudApp.Ble.Example"
-    xmlns:deviceViews="clr-namespace:MauiCrudApp.Ble.Example.Features.Device.Views"
-    xmlns:characteristicViews="clr-namespace:MauiCrudApp.Ble.Example.Features.Characteristic.Views"
+    xmlns:deviceViews="clr-namespace:MauiCrudApp.Ble.Views.Features.Device.Views;assembly=MauiCrudApp.Ble.Views"
+    xmlns:characteristicViews="clr-namespace:MauiCrudApp.Ble.Views.Features.Characteristic.Views;assembly=MauiCrudApp.Ble.Views"
     Shell.FlyoutBehavior="Flyout"
     Title="MauiCrudApp.Ble.Example">
 

@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
 
-namespace MauiCrudApp.Ble.Example.Converters;
+namespace MauiCrudApp.Ble.Logic.Converters;
 
 public class ByteArrayToHexConverter : IValueConverter
 {

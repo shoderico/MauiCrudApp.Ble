@@ -9,7 +9,7 @@ using MauiCrudApp.Common.ViewModels;
 
 using MauiCrudApp.Ble.Interfaces;
 
-namespace MauiCrudApp.Ble.Example.Features.Device.ViewModels;
+namespace MauiCrudApp.Ble.Logic.Features.Device.ViewModels;
 
 public partial class DeviceScanViewModel : ViewModelBase<DeviceScanParameter>
 {

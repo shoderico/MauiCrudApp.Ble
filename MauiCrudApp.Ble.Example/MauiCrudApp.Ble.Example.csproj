@@ -73,24 +73,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\..\MauiCrudApp.Common\src\MauiCrudApp.Common\MauiCrudApp.Common.csproj" />
+	  <ProjectReference Include="..\MauiCrudApp.Ble.Logic\MauiCrudApp.Ble.Logic.csproj" />
+	  <ProjectReference Include="..\MauiCrudApp.Ble.Views\MauiCrudApp.Ble.Views.csproj" />
 	  <ProjectReference Include="..\MauiCrudApp.Ble\MauiCrudApp.Ble.csproj" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <MauiXaml Update="Features\Characteristic\Views\CharacteristicControlPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Features\Device\Views\DeviceConnectPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Features\Device\Views\DeviceScanPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Core\Models\" />
-	  <Folder Include="Core\Services\" />
 	</ItemGroup>
 
 </Project>

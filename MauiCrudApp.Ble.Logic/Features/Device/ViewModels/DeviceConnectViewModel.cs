@@ -5,11 +5,10 @@ using MauiCrudApp.Common.Navigation;
 using MauiCrudApp.Common.ViewModels;
 
 using MauiCrudApp.Ble.Interfaces;
-using MauiCrudApp.Ble.Example.Features.Device.Views;
 
-namespace MauiCrudApp.Ble.Example.Features.Device.ViewModels;
+namespace MauiCrudApp.Ble.Logic.Features.Device.ViewModels;
 
-public partial class DeviceConnectViewModel : ViewModelBase<DeviceConnectParameter>
+public partial class DeviceConnectViewModel<TPage> : ViewModelBase<DeviceConnectParameter> where TPage : ContentPage
 {
     private readonly INavigationService _navigationService;
     private readonly IDialogService _dialogService;
@@ -62,7 +61,7 @@ public partial class DeviceConnectViewModel : ViewModelBase<DeviceConnectParamet
         try
         {
             var parameter = new DeviceScanParameter();
-            await _navigationService.PushAsync(typeof(DeviceScanPage), parameter);
+            await _navigationService.PushAsync(typeof(TPage), parameter);
         }
         catch (Exception ex)
         {

@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiCrudApp.Common", "..\Ma
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiCrudApp.Ble.Example", "MauiCrudApp.Ble.Example\MauiCrudApp.Ble.Example.csproj", "{6FB61EDF-BA35-4003-882A-3092E518BB8E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiCrudApp.Ble.Logic", "MauiCrudApp.Ble.Logic\MauiCrudApp.Ble.Logic.csproj", "{20A85D06-8273-4807-A30D-B59DA9992BB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiCrudApp.Ble.Views", "MauiCrudApp.Ble.Views\MauiCrudApp.Ble.Views.csproj", "{E9E902C6-BFDD-41BE-AF69-CC02EFA9E261}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +33,14 @@ Global
 		{6FB61EDF-BA35-4003-882A-3092E518BB8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6FB61EDF-BA35-4003-882A-3092E518BB8E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6FB61EDF-BA35-4003-882A-3092E518BB8E}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{20A85D06-8273-4807-A30D-B59DA9992BB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20A85D06-8273-4807-A30D-B59DA9992BB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20A85D06-8273-4807-A30D-B59DA9992BB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20A85D06-8273-4807-A30D-B59DA9992BB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9E902C6-BFDD-41BE-AF69-CC02EFA9E261}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9E902C6-BFDD-41BE-AF69-CC02EFA9E261}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9E902C6-BFDD-41BE-AF69-CC02EFA9E261}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9E902C6-BFDD-41BE-AF69-CC02EFA9E261}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

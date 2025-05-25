@@ -1,7 +1,7 @@
-using MauiCrudApp.Ble.Example.Features.Device.ViewModels;
+using MauiCrudApp.Ble.Logic.Features.Device.ViewModels;
 using MauiCrudApp.Common.Views;
 
-namespace MauiCrudApp.Ble.Example.Features.Device.Views;
+namespace MauiCrudApp.Ble.Views.Features.Device.Views;
 
 public partial class DeviceScanPage : PageBase
 {

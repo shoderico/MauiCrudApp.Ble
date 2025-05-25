@@ -38,18 +38,18 @@ namespace MauiCrudApp.Ble.Example
 
 
             // Feature: DeviceConnect
-            builder.Services.AddTransient<Features.Device.ViewModels.DeviceConnectViewModel>();
-            builder.Services.AddTransient<Features.Device.Views.DeviceConnectPage>();
+            builder.Services.AddTransient<Logic.Features.Device.ViewModels.DeviceConnectViewModel<MauiCrudApp.Ble.Views.Features.Device.Views.DeviceScanPage>>();
+            builder.Services.AddTransient<Views.Features.Device.Views.DeviceConnectPage>();
             // Feature: DeviceScan
-            builder.Services.AddTransient<Features.Device.ViewModels.DeviceScanViewModel>();
-            builder.Services.AddTransient<Features.Device.Views.DeviceScanPage>();
+            builder.Services.AddTransient<Logic.Features.Device.ViewModels.DeviceScanViewModel>();
+            builder.Services.AddTransient<Views.Features.Device.Views.DeviceScanPage>();
 
             
             // Feature.Characteristic
-            builder.Services.AddSingleton<Features.Characteristic.ViewModels.CharacteristicStateStore>();
-            builder.Services.AddTransient<Features.Characteristic.ViewModels.CharacteristicControlViewModel>();
-            builder.Services.AddTransient<Features.Characteristic.ViewModels.CharacteristicViewModel>();
-            builder.Services.AddTransient<Features.Characteristic.Views.CharacteristicControlPage>();
+            builder.Services.AddSingleton<Logic.Features.Characteristic.ViewModels.CharacteristicStateStore>();
+            builder.Services.AddTransient<Logic.Features.Characteristic.ViewModels.CharacteristicControlViewModel>();
+            builder.Services.AddTransient<Logic.Features.Characteristic.ViewModels.CharacteristicViewModel>();
+            builder.Services.AddTransient<Views.Features.Characteristic.Views.CharacteristicControlPage>();
 
 
 

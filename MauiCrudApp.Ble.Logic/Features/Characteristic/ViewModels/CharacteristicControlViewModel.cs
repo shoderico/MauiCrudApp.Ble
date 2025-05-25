@@ -6,7 +6,7 @@ using MauiCrudApp.Common.Navigation;
 using MauiCrudApp.Common.ViewModels;
 using MauiCrudApp.Ble.Interfaces;
 
-namespace MauiCrudApp.Ble.Example.Features.Characteristic.ViewModels;
+namespace MauiCrudApp.Ble.Logic.Features.Characteristic.ViewModels;
 
 public partial class CharacteristicControlViewModel : ViewModelBase<CharacteristicControlParameter>
 {

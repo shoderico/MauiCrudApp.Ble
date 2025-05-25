@@ -1,16 +1,12 @@
 ﻿using System.Globalization;
 
-namespace MauiCrudApp.Ble.Example.Converters;
+namespace MauiCrudApp.Ble.Logic.Converters;
 
-internal class ByteArrayToStringConverter : IValueConverter
+public class BoolToNotifyTextConverter : IValueConverter
 {
     public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
-        if (value is byte[] bytes)
-        {
-            return System.Text.Encoding.UTF8.GetString(bytes);
-        }
-        return string.Empty;
+        return (bool)(value ?? false) ? "Unset Notify" : "Set Notify";
     }
 
     public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)

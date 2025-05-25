@@ -4,7 +4,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using MauiCrudApp.Common.Interfaces;
 using MauiCrudApp.Ble.Interfaces;
 
-namespace MauiCrudApp.Ble.Example.Features.Characteristic.ViewModels;
+namespace MauiCrudApp.Ble.Logic.Features.Characteristic.ViewModels;
 
 public partial class CharacteristicStateStore : ObservableObject
 {
