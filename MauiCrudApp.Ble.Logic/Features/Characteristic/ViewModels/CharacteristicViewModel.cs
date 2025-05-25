@@ -43,15 +43,19 @@ public partial class CharacteristicViewModel : ObservableObject
         };
 
         // Subscribe to value changes
-        characteristic.ValueChanged += (s, value) =>
-        {
-            MainThread.BeginInvokeOnMainThread(() =>
-            {
-                OnPropertyChanged(nameof(Characteristic));
-                ReadValues.Add(value);
-            });
-        };
+        characteristic.ValueChanged += OnCharacteristicValueChanged;
     }
+
+    protected virtual void OnCharacteristicValueChanged(object? s, BleValueChangedEventArgs value)
+    {
+        MainThread.BeginInvokeOnMainThread(() =>
+        {
+            OnPropertyChanged(nameof(Characteristic));
+            ReadValues.Add(value);
+        });
+    }
+
+
 
     [RelayCommand]
     private async Task Write(IBleCharacteristic characteristic)

@@ -42,7 +42,7 @@ public partial class CharacteristicStateStore : ObservableObject
                         .ToList();
                     foreach (var cvm in toRemove)
                     {
-                        Characteristics.Remove(cvm);
+                        OnRemoveCharacteristicViewModel(cvm);
                     }
 
                     foreach (var service in services)
@@ -56,7 +56,7 @@ public partial class CharacteristicStateStore : ObservableObject
                             if (existingCvm == null)
                             {
                                 Console.WriteLine($"Creating new CharacteristicViewModel for {characteristic.Id}");
-                                var newCvm = new CharacteristicViewModel(characteristic, service.Id, _bleDeviceManager, _dialogService);
+                                var newCvm = CreateCharacteristicViewModel(characteristic, service.Id, _bleDeviceManager, _dialogService);
                                 Characteristics.Add(newCvm);
                             }
                             else
@@ -79,4 +79,16 @@ public partial class CharacteristicStateStore : ObservableObject
             await _dialogService.DisplayAlert("Error", $"Failed to update characteristics: {ex.Message}", "OK");
         }
     }
+
+    protected virtual CharacteristicViewModel CreateCharacteristicViewModel(IBleCharacteristic characteristic, Guid id, IBleDeviceManager bleDeviceManager, IDialogService dialogService)
+    {
+        return new CharacteristicViewModel(characteristic, id, bleDeviceManager, dialogService);
+    }
+
+    protected virtual void OnRemoveCharacteristicViewModel(CharacteristicViewModel cvm)
+    {
+        Characteristics.Remove(cvm);
+    }
+
+    
 }
